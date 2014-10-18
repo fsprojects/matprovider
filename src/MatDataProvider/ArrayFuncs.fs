@@ -53,7 +53,7 @@ module ArrayFuncs =
             Convert.ChangeType(r, typeof<double>) |> unbox, 
             Convert.ChangeType(i, typeof<double>) |> unbox)
 
-    let inline private toComplexArray (real: Array) (im: Array) =
+    let inline internal toComplexArray (real: Array) (im: Array) =
         if im = null || real.Length <> im.Length then 
             Array.init real.Length (fun i -> complex (real.GetValue i) 0.0)
         else 

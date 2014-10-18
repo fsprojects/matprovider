@@ -71,4 +71,4 @@ module internal MatTypesBuilder =
             | _ -> ()
 
     let createTypes (ty: ProvidedTypeDefinition) fileName =
-        List.iter (addMembers ty) (let f = readFile fileName in printfn "%A" f; f)
+        List.iter (addMembers ty) (readFile fileName)
