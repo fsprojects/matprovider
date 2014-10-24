@@ -173,3 +173,12 @@ TestResults.xml
 
 # Nuget outputs
 nuget/*.nupkg
+release.cmd
+release.sh
+localpackages/
+paket-files
+*.orig
+.paket/paket.exe
+docs/content/license.md
+docs/content/release-notes.md
+

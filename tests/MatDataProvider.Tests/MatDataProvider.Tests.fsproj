@@ -4,44 +4,40 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7E90D6CE-A10B-4858-A5BC-41DF7250CBCA}</ProjectGuid>
+    <ProjectGuid>{E789C72A-5CFD-436B-8EF1-61AA2852A89F}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>MatDataProvider</RootNamespace>
-    <AssemblyName>MatDataProvider</AssemblyName>
+    <RootNamespace>MatDataProvider.Tests</RootNamespace>
+    <AssemblyName>MatDataProvider.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.3.0.0</TargetFSharpCoreVersion>
-    <Name>MatDataProvider</Name>
+    <Name>MatDataProvider.Tests</Name>
     <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <Tailcalls>false</Tailcalls>
-    <OutputPath>..\..\bin</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>..\..\bin\MatDataProvider.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\fsharp_project_scaffold_tests.XML</DocumentationFile>
+    <StartAction>Project</StartAction>
+    <StartProgram>
+    </StartProgram>
+    <StartArguments>
+    </StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <Tailcalls>true</Tailcalls>
-    <OutputPath>..\..\bin</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>..\..\bin\MatDataProvider.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\MatDataProvider.Tests.xml</DocumentationFile>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="mscorlib" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="FSharp.Core" />
-    <Reference Include="zlib.net">
-      <HintPath>..\..\packages\zlib.net\lib\zlib.net.dll</HintPath>
-    </Reference>
-  </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
   </PropertyGroup>
@@ -57,8 +53,29 @@
       </PropertyGroup>
     </Otherwise>
   </Choose>
-  <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+  <Import Project="$(FSharpTargetsPath)" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <ItemGroup>
+    <Compile Include="TestUtils.fs" />
+    <Compile Include="CompressedTypes.fs" />
+    <None Include="paket.references" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="FSharp.Core">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\MatDataProvider\MatDataProvider.fsproj">
+      <Name>MatDataProvider</Name>
+      <Project>{7E90D6CE-A10B-4858-A5BC-41DF7250CBCA}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
@@ -67,15 +84,9 @@
   -->
   <Import Project="..\..\.paket\paket.targets" />
   <ItemGroup>
-    <Compile Include="ProvidedTypes.fsi" />
-    <Compile Include="ProvidedTypes.fs" />
-    <Compile Include="MatDataTypes.fs" />
-    <Compile Include="ArrayFuncs.fs" />
-    <Compile Include="MatFileReader.fs" />
-    <Compile Include="MatTypesBuilder.fs" />
-    <Compile Include="MatDataProvider.fs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Script.fsx" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\packages\NUnit\lib\nunit.framework.dll</HintPath>
+      <Paket>True</Paket>
+    </Reference>
   </ItemGroup>
 </Project>
