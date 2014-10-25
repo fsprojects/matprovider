@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="TestUtils.fs" />
     <Compile Include="CompressedTypes.fs" />
+    <Compile Include="SimpleTypes.fs" />
     <None Include="paket.references" />
   </ItemGroup>
   <ItemGroup>

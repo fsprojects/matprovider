@@ -7,14 +7,12 @@
 open MatDataProvider
 
 [<Literal>]
-let fileName = __SOURCE_DIRECTORY__ + "/../../data/compressedTypes.mat"
+let fileName = __SOURCE_DIRECTORY__ + "/../../data/varTypes.mat"
 
 type M = MatDataProvider.MatFile<fileName>
 
 let inline print x = printfn "Type: %A  |  Values: %A" (x.GetType()) x
 
-print M.y.doubleint8
-(*
 print M.x.bools
 print M.y.doubleint32
 print M.z.scalar
