@@ -1,7 +1,6 @@
 ﻿System.IO.Directory.SetCurrentDirectory(__SOURCE_DIRECTORY__)
 
 #I "../../bin"
-//#r "../../bin/zlib.net.dll"
 #r "../../bin/MatDataProvider.dll"
 
 open MatDataProvider
