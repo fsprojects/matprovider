@@ -113,9 +113,11 @@ module MatFileReader =
         
     // make recursive function because of binary reader 
     and decompress (reader: BinaryReader) size =
+        use compressedStream = new MemoryStream(reader.ReadBytes size, 2, size - 6)
+        use decompressor = new DeflateStream(compressedStream, CompressionMode.Decompress)
         use mstream = new MemoryStream()
-        use res = new zlib.ZOutputStream(mstream)
-        res.Write(reader.ReadBytes size, 0, size)
+        decompressor.CopyTo(mstream);
+
         mstream.Position <- 0L
 
         readData (new BinaryReader(mstream))
