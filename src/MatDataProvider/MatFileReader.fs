@@ -170,7 +170,7 @@ module MatFileReader =
             | _ -> name, Unknown
            
     let readFile fileName =
-        use str = new FileStream(fileName, FileMode.Open)
+        use str = new FileStream(fileName, FileMode.Open, FileAccess.Read)
         use reader = new BinaryReader(str)
         let headerInfo = readHeader reader
 
