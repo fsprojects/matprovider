@@ -59,6 +59,11 @@
     <Compile Include="TestUtils.fs" />
     <Compile Include="CompressedTypes.fs" />
     <Compile Include="SimpleTypes.fs" />
+    <Compile Include="BigFile.fs" />
+    <None Include="..\..\data\ex3data1.mat">
+      <Link>ex3data1.mat</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="..\..\data\varTypes.mat">
       <Link>varTypes.mat</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
