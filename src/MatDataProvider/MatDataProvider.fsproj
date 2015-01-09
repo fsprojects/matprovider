@@ -22,6 +22,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <DocumentationFile>..\..\bin\MatDataProvider.xml</DocumentationFile>
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe</StartProgram>
+    <StartArguments>D:\code\matprovider\MatDataProvider.Tests.sln</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,16 +35,6 @@
     <WarningLevel>3</WarningLevel>
     <DocumentationFile>..\..\bin\MatDataProvider.xml</DocumentationFile>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="mscorlib" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="FSharp.Core" />
-    <Reference Include="zlib.net">
-      <HintPath>..\..\packages\zlib.net\lib\zlib.net.dll</HintPath>
-    </Reference>
-  </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
   </PropertyGroup>
@@ -74,8 +67,16 @@
     <Compile Include="MatFileReader.fs" />
     <Compile Include="MatTypesBuilder.fs" />
     <Compile Include="MatDataProvider.fs" />
+    <None Include="Script.fsx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Script.fsx" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="FSharp.Core" />
+    <Reference Include="zlib.net">
+      <HintPath>..\..\packages\zlib.net\lib\zlib.net.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>
