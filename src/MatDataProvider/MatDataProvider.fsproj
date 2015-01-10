@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="ProvidedTypes.fsi" />
     <Compile Include="ProvidedTypes.fs" />
+    <Compile Include="TypeProviders.Helper.fs" />
     <Compile Include="MatDataTypes.fs" />
     <Compile Include="ArrayFuncs.fs" />
     <Compile Include="MatFileReader.fs" />
