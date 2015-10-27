@@ -31,7 +31,7 @@ in the 'data' folder.
 ####Build status
 
 [![Build status](https://ci.appveyor.com/api/projects/status/hb814824p50t9pj2?svg=true)](https://ci.appveyor.com/project/luajalla/matprovider)
-[![Build Status](https://travis-ci.org/luajalla/matprovider.svg)](https://travis-ci.org/luajalla/matprovider)
+[![Build Status](https://travis-ci.org/fsprojects/matprovider.svg)](https://travis-ci.org/fsprojects/matprovider)
 
 ####Links
 
