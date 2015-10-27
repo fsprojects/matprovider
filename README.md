@@ -35,5 +35,5 @@ in the 'data' folder.
 
 ####Links
 
-Mat-file format description ([pdf](http://www.mathworks.com/help/pdf_doc/matlab/matfile_format.pdf))  
-Compression library ([zlib](http://www.zlib.net/))
+Mat-file format description ([pdf](http://www.mathworks.com/help/pdf_doc/matlab/matfile_format.pdf))
+
