@@ -59,9 +59,33 @@
     <Compile Include="TestUtils.fs" />
     <Compile Include="CompressedTypes.fs" />
     <Compile Include="SimpleTypes.fs" />
+    <Compile Include="BigFile.fs" />
+    <None Include="..\..\data\ex3data1.mat">
+      <Link>ex3data1.mat</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\data\varTypes.mat">
+      <Link>varTypes.mat</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\data\simpleTypes.mat">
+      <Link>simpleTypes.mat</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\data\matrices.mat">
+      <Link>matrices.mat</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\data\compressedTypes.mat">
+      <Link>compressedTypes.mat</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="paket.references" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="MatDataProvider">
+      <HintPath>..\..\bin\MatDataProvider.dll</HintPath>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -69,12 +93,6 @@
     <Reference Include="FSharp.Core">
       <Private>True</Private>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\MatDataProvider\MatDataProvider.fsproj">
-      <Name>MatDataProvider</Name>
-      <Project>{7E90D6CE-A10B-4858-A5BC-41DF7250CBCA}</Project>
-    </ProjectReference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -87,6 +105,7 @@
   <ItemGroup>
     <Reference Include="nunit.framework">
       <HintPath>..\..\packages\NUnit\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
       <Paket>True</Paket>
     </Reference>
   </ItemGroup>

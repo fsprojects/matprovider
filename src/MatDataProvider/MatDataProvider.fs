@@ -8,6 +8,7 @@ open MatTypesBuilder
 [<TypeProvider>]
 type MatDataProvider (cfg : TypeProviderConfig) as this =
     inherit TypeProviderForNamespaces ()
+    let context = new Context(this, cfg)
 
     let ns = "MatDataProvider"
     let asm = Assembly.GetExecutingAssembly()
@@ -17,15 +18,17 @@ type MatDataProvider (cfg : TypeProviderConfig) as this =
 
     do fileType.DefineStaticParameters(
         parameters = staticParams,
-        instantiationFunction = (fun typeName -> function
+        instantiationFunction = (fun typeName parameterValues ->
+            match parameterValues with
             | [| :? string as fileName |] ->
                 let ty = ProvidedTypeDefinition(asm, ns, typeName, None)
                 createTypes ty fileName
+                context.WatchFile fileName
                 ty
             | _ -> failwith "Unexpected parameter values"))
 
     do this.AddNamespace(ns, [fileType])
-
+    do this.Disposing.Add (fun _ -> dispose context)
          
 [<assembly:TypeProviderAssembly>]
 do ()

@@ -42,6 +42,7 @@ let tags = "fsharp matlab"
 
 // File system information 
 let solutionFile  = "MatDataProvider.sln"
+let testSolutionFile  = "MatDataProvider.Tests.sln"
 
 // Pattern specifying assemblies to be tested using NUnit
 let testAssemblies = "tests/**/bin/Release/*Tests*.dll"
@@ -110,6 +111,10 @@ Target "CleanDocs" (fun _ ->
 
 Target "Build" (fun _ ->
     !! solutionFile
+    |> MSBuildRelease "" "Rebuild"
+    |> ignore
+
+    !! testSolutionFile
     |> MSBuildRelease "" "Rebuild"
     |> ignore
 )
@@ -192,8 +197,7 @@ Target "GenerateHelp" (fun _ ->
     Rename "docs/content/release-notes.md" "docs/content/RELEASE_NOTES.md"
 
     DeleteFile "docs/content/license.md"
-    CopyFile "docs/content/" "LICENSE.txt"
-    Rename "docs/content/license.md" "docs/content/LICENSE.txt"
+    CopyFile "docs/content/" "LICENSE.md"
 
     generateHelp true
 )
