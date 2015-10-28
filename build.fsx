@@ -109,6 +109,8 @@ Target "CleanDocs" (fun _ ->
 // --------------------------------------------------------------------------------------
 // Build library & test project
 
+MSBuildDefaults <- { MSBuildDefaults with MaxCpuCount = Some (Some 1) }
+
 Target "Build" (fun _ ->
     !! solutionFile
     |> MSBuildRelease "" "Rebuild"
