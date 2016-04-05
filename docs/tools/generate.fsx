@@ -26,6 +26,7 @@ let info =
 #I "../../packages/FSharp.Compiler.Service/lib/net40"
 #r "../../packages/FAKE/tools/NuGet.Core.dll"
 #r "../../packages/FAKE/tools/FakeLib.dll"
+#r "../../packages/FSharpVSPowerTools.Core/lib/net45/FSharpVSPowerTools.Core.dll"
 #r "RazorEngine.dll"
 #r "System.Web.Razor.dll"
 #r "FSharp.Literate.dll"

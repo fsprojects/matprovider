@@ -4,6 +4,7 @@ open System
 open MatDataProvider
 open NUnit.Framework
 
+#if STRESS
 module BigFile =
 
     [<Literal>]
@@ -16,3 +17,4 @@ module BigFile =
     let ``should read the file``() =
         let X = M.X
         Assert.AreEqual([| true; false |], M.X)
+#endif

@@ -1,8 +1,10 @@
 source https://nuget.org/api/v2
 
-nuget FSharp.Formatting
-nuget NUnit 
-nuget NUnit.Runners
+nuget FSharp.Formatting 2.12.1
+nuget FSharpVSPowerTools.Core
+nuget FSharp.Core 3.1.2.5
+nuget NUnit 2.6.4
+nuget NUnit.Runners 2.6.4
 nuget Nuget.CommandLine
 nuget FAKE
 nuget SourceLink.Fake
